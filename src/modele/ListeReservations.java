@@ -12,18 +12,18 @@ import utils.DejaPresentException;
  *
  * @author 1791330
  */
-public class ListeChambres extends ArrayList<Chambre>{
-    public void ajouterChambre(Chambre ch) throws DejaPresentException{
-        if(verifierDoublant(ch)){
-            throw new DejaPresentException("La chambre deja existe dans la liste", ch);
+public class ListeReservations extends ArrayList<Reservation>{
+     public void ajouterClient(Reservation res) throws DejaPresentException{
+        if(verifierDoublant(res)){
+            throw new DejaPresentException("La reservtion deja existe dans la liste", res);
           }else{
-            this.add(ch);
+            this.add(res);
             }            
         }
     
-    private boolean verifierDoublant(Chambre ch){
-        for (Chambre c: this){
-            if (c.equals(ch)){
+    private boolean verifierDoublant(Reservation res){
+        for (Reservation r: this){
+            if (r.equals(res)){
                 return true;
             }
         }
@@ -31,9 +31,8 @@ public class ListeChambres extends ArrayList<Chambre>{
     }
     
     public void listerChambre(){
-        for (Chambre c: this){
-            System.out.println(c);
+        for (Reservation res: this){
+            System.out.println(res);
         }
     }
-    
 }

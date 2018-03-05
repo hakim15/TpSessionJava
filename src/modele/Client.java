@@ -5,6 +5,8 @@
  */
 package modele;
 
+import java.util.Objects;
+
 /**
  *
  * @author Hakim Mamar
@@ -58,6 +60,42 @@ public class Client {
 
     public void setTel(String tel) {
         this.tel = tel;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + this.idClient;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Client other = (Client) obj;
+        if (this.idClient != other.idClient) {
+            return false;
+        }
+        if (!Objects.equals(this.nom, other.nom)) {
+            return false;
+        }
+        if (!Objects.equals(this.prenom, other.prenom)) {
+            return false;
+        }
+        if (!Objects.equals(this.tel, other.tel)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" + "idClient=" + idClient + ", nom=" + nom + ", prenom=" + prenom + ", tel=" + tel + '}';
     }
     
     
