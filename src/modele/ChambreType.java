@@ -18,12 +18,7 @@ public abstract class ChambreType {
     public ChambreType(int numero, boolean disponile) {
         this.numero = numero;
         this.disponile = disponile;
-    }
-
-    
-   
-
-   
+    }   
 
     
 

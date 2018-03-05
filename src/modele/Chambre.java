@@ -12,7 +12,7 @@ package modele;
 public class Chambre {
 
     public ChambreType getChambre(String chambreType,int no, boolean disponible ) {
-
+//Commit
         if (chambreType.equalsIgnoreCase("chambre simple")) {
             return new ChambreSimple(no, disponible);
         } else if (chambreType.equalsIgnoreCase("chambre double")) {
