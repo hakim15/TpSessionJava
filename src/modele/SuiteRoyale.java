@@ -9,18 +9,19 @@ package modele;
  *
  * @author Hakim Mamar
  */
-public class SuiteRoyale extends ChambreType{
+public class SuiteRoyale extends Chambre {
 
-    public SuiteRoyale(int numero, boolean disponile) {
-        super(numero, disponile);
+    public SuiteRoyale(int numero, boolean disponible, double prix) {
+        super(numero, disponible, prix);
     }
-
-       
-   
 
     public SuiteRoyale() {
     }
     
+    @Override
+    public String toString() {
+        return " Suite";
+    }
     
-    
+
 }

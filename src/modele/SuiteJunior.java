@@ -9,18 +9,21 @@ package modele;
  *
  * @author Hakim Mamar
  */
-public class SuiteJunior  extends ChambreType{
+public class SuiteJunior  extends Chambre{
 
-    public SuiteJunior(int numero, boolean disponile) {
-        super(numero, disponile);
-    }
-
-    
-    
-   
+    public SuiteJunior(int numero, boolean disponible, double prix) {
+        super(numero, disponible, prix);
+    }   
 
     public SuiteJunior() {
     }
+
+    @Override
+    public String toString() {
+        return " Junior";
+    }
+    
+    
     
     
 }

@@ -9,37 +9,81 @@ package modele;
  *
  * @author Hakim Mamar
  */
-public class Chambre {
+public abstract class Chambre {
+    
+   private int numero;
+   private boolean disponible;
+   private double prix;
 
-    public ChambreType getChambre(String chambreType,int no, boolean disponible ) {
-//Commit
-        if (chambreType.equalsIgnoreCase("chambre simple")) {
-            return new ChambreSimple(no, disponible);
-        } else if (chambreType.equalsIgnoreCase("chambre double")) {
-            return new ChambreDouble(no, disponible);
-        } else if (chambreType.equalsIgnoreCase("suite junior")) {
-            return new SuiteJunior(no, disponible);
-        } else if (chambreType.equalsIgnoreCase("suite royale")) {
-            return new SuiteRoyale(no, disponible);
-        } else {
-            return null;
-        }
+    public Chambre(int numero, boolean disponible,double prix) {
+        this.numero = numero;
+        this.disponible = disponible;
+        this.prix = prix;
+    }   
+
+    public double getPrix() {
+        return prix;
     }
 
-    public ChambreType getChambre(String chambreType ) {
-
-        if (chambreType.equalsIgnoreCase("chambre simple")) {
-            return new ChambreSimple();
-        } else if (chambreType.equalsIgnoreCase("chambre double")) {
-            return new ChambreDouble();
-        } else if (chambreType.equalsIgnoreCase("suite junior")) {
-            return new SuiteJunior();
-        } else if (chambreType.equalsIgnoreCase("suite royale")) {
-            return new SuiteRoyale();
-        } else {
-            return null;
-        }
-
+    public void setPrix(double prix) {
+        this.prix = prix;
     }
 
+    
+
+    public Chambre() {
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + this.numero;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Chambre other = (Chambre) obj;
+        if (this.numero != other.numero) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Chambre{" + "numero=" + numero + ", disponible=" + disponible + ", prix=" + prix + '}';
+    }
+
+    
+    
+    
+   
+   
+  
 }

@@ -9,15 +9,22 @@ package modele;
  *
  * @author Hakim Mamar
  */
-public class ChambreSimple extends ChambreType{
+public class ChambreSimple extends Chambre{
     
     public ChambreSimple(){
         
     }
 
-    public ChambreSimple(int numero, boolean disponile) {
-        super(numero, disponile);
+    public ChambreSimple(int numero, boolean disponible, double prix) {
+        super(numero, disponible, prix);
     }
+
+    @Override
+    public String toString() {
+        return " Simple";
+    }
+
+    
 
     
     
