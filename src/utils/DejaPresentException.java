@@ -20,5 +20,9 @@ public class DejaPresentException extends Exception{
         super(message);
         this.objet = ob;
     }
+
+    public Object getObjet() {
+        return objet;
+    }
     
 }

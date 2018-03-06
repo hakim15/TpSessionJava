@@ -25,15 +25,19 @@ public class AppCtr {
         ListeClients lc = new ListeClients();
         try{
             lc.ajouterClient(c1);
-        }catch (DejaPresentException dpse){
-            /*lc.ajouterClient(c2);
-            System.out.println("c2 est");*/
+        }catch(DejaPresentException dpse){
+            System.out.println("Non");
+        }
+        try{
             lc.ajouterClient(c3);
+        } catch(DejaPresentException dpse){
+            System.out.println(dpse.getMessage());
         }
-        catch(DejaPresentException dpse){
-            dpse.getLocalizedMessage();
+        try{
+            lc.ajouterClient(c2);
+        } catch(DejaPresentException dpse){
+            System.out.println(dpse.getMessage());
         }
-        
         lc.listerClients();
     }
     

@@ -14,10 +14,10 @@ import utils.DejaPresentException;
  */
 public class ListeClients extends ArrayList<Client>{
     public void ajouterClient(Client cl) throws DejaPresentException{
-        if(verifierDoublant(cl)){
-            throw new DejaPresentException("Le client deja existe dans la liste", cl);
-          }else{
+        if(!verifierDoublant(cl)){
             this.add(cl);
+          }else{
+            throw new DejaPresentException("Le client: " + cl.getNom() + " deja existe dans la liste", cl);
             }            
         }
     
