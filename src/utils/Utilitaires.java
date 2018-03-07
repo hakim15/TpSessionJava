@@ -5,13 +5,17 @@
  */
 package utils;
 
+import java.util.ArrayList;
+import modele.Client;
+import modele.ListeClients;
+
 /**
  *
  * @author Hakim Mamar
  */
-public class Utilitaires {
+public class Utilitaires{
     
-    public static <T> boolean verifierDoublant(T[] arr, T el){
+    public static <T> boolean verifierDoublant(ArrayList<T> arr, T el){
         for (T t: arr){
             if (t.equals(el)){
                 return true;
@@ -20,7 +24,7 @@ public class Utilitaires {
         return false;
     }
     
-    public static <T>void afficherListe(T[] arr){
+    public static <T>void afficherListe(ArrayList<T> arr){
         for (T tab: arr){
             System.out.println(tab);
         }
@@ -29,4 +33,5 @@ public class Utilitaires {
     public static<T> void ecrireFichier(String nomFichier, T t){
         
     }
+
 }

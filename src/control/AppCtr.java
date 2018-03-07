@@ -8,6 +8,7 @@ package control;
 import modele.Client;
 import modele.ListeClients;
 import utils.DejaPresentException;
+import utils.Utilitaires;
 
 /**
  *
@@ -38,7 +39,8 @@ public class AppCtr {
         } catch(DejaPresentException dpse){
             System.out.println(dpse.getMessage());
         }
-        lc.listerClients();
+        
+        Utilitaires.afficherListe(lc);
     }
     
 }

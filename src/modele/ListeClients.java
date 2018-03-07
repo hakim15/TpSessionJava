@@ -25,19 +25,4 @@ public class ListeClients extends ArrayList<Client>{
            this.add(cl); 
         }
     }
-    
-    /*private boolean verifierDoublant(Client cl){
-        for (Client clt: this){
-            if (clt.equals(cl)){
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    public void listerClients(){
-        for (Client clt: this){
-            System.out.println(clt);
-        }
-    }*/
 }

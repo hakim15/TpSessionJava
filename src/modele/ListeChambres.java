@@ -24,6 +24,7 @@ public class ListeChambres extends ArrayList<Chambre>{
         }else{
             this.add(ch);
         }
+    }
     
    /* private boolean verifierDoublant(Chambre ch){
         for (Chambre c: this){
