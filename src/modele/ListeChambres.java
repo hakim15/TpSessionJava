@@ -7,6 +7,7 @@ package modele;
 
 import java.util.ArrayList;
 import utils.DejaPresentException;
+import utils.Utilitaires;
 
 /**
  *
@@ -14,14 +15,17 @@ import utils.DejaPresentException;
  */
 public class ListeChambres extends ArrayList<Chambre>{
     public void ajouterChambre(Chambre ch) throws DejaPresentException{
-        if(verifierDoublant(ch)){
-            throw new DejaPresentException("La chambre deja existe dans la liste", ch);
-          }else{
-            this.add(ch);
+        if(this.size()>0){
+            if(Utilitaires.verifierDoublant(this, ch)){
+                throw new DejaPresentException("La chambre deja existe dans la liste", ch);
+            }else{
+                this.add(ch);
             }            
+        }else{
+            this.add(ch);
         }
     
-    private boolean verifierDoublant(Chambre ch){
+   /* private boolean verifierDoublant(Chambre ch){
         for (Chambre c: this){
             if (c.equals(ch)){
                 return true;
@@ -34,6 +38,6 @@ public class ListeChambres extends ArrayList<Chambre>{
         for (Chambre c: this){
             System.out.println(c);
         }
-    }
+    }*/
     
 }

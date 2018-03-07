@@ -5,22 +5,19 @@
  */
 package modele;
 
-import java.io.File;
-import java.io.FileWriter;
-
 /**
  *
- * @author Hakim Mamar
+ * @author Zver
  */
-public class Paiement {
-    private final double  TAUX_TAXES = 15;
+public class Facture {
     private Reservation reservation;
-    private Facture facture;
     
-    public Paiement(Reservation reservation){
+    public Facture(){}
+
+    public Facture(Reservation reservation) {
         this.reservation = reservation;
     }
-    
+
     public Reservation getReservation() {
         return reservation;
     }
@@ -28,9 +25,10 @@ public class Paiement {
     public void setReservation(Reservation reservation) {
         this.reservation = reservation;
     }
-    
-    public void genererFacture(Reservation res){
-        this.facture = new Facture(res); 
+
+    @Override
+    public String toString() {
+        return "Facture{" + "reservation=" + reservation + '}';
     }
     
     

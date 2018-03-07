@@ -7,6 +7,7 @@ package modele;
 
 import java.util.ArrayList;
 import utils.DejaPresentException;
+import utils.Utilitaires;
 
 /**
  *
@@ -14,14 +15,18 @@ import utils.DejaPresentException;
  */
 public class ListeClients extends ArrayList<Client>{
     public void ajouterClient(Client cl) throws DejaPresentException{
-        if(!verifierDoublant(cl)){
-            this.add(cl);
-          }else{
-            throw new DejaPresentException("Le client: " + cl.getNom() + " deja existe dans la liste", cl);
-            }            
+        if(this.size()>0){
+            if(!Utilitaires.verifierDoublant(this, cl)){
+                this.add(cl);
+              }else{
+                throw new DejaPresentException("Le client: " + cl.getNom() + " deja existe dans la liste", cl);
+                }            
+        }else{
+           this.add(cl); 
         }
+    }
     
-    private boolean verifierDoublant(Client cl){
+    /*private boolean verifierDoublant(Client cl){
         for (Client clt: this){
             if (clt.equals(cl)){
                 return true;
@@ -34,5 +39,5 @@ public class ListeClients extends ArrayList<Client>{
         for (Client clt: this){
             System.out.println(clt);
         }
-    }
+    }*/
 }

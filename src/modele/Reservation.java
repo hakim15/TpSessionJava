@@ -6,6 +6,7 @@
 package modele;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  *
@@ -75,6 +76,50 @@ public class Reservation {
 
     public void setNbPersonnes(int nbPersonnes) {
         this.nbPersonnes = nbPersonnes;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 79 * hash + this.reservation_id;
+        hash = 79 * hash + this.client_id;
+        hash = 79 * hash + Objects.hashCode(this.dateDebut);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Reservation other = (Reservation) obj;
+        if (this.reservation_id != other.reservation_id) {
+            return false;
+        }
+        if (this.client_id != other.client_id) {
+            return false;
+        }
+        if (!Objects.equals(this.dateDebut, other.dateDebut)) {
+            return false;
+        }
+        if (!Objects.equals(this.dateFin, other.dateFin)) {
+            return false;
+        }
+        if (this.nbNuits != other.nbNuits) {
+            return false;
+        }
+        if (this.nbPersonnes != other.nbPersonnes) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Reservation{" + "reservation_id=" + reservation_id + ", client_id=" + client_id + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", nbNuits=" + nbNuits + ", nbPersonnes=" + nbPersonnes + '}';
     }
     
     
