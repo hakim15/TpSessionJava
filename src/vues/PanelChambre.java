@@ -5,11 +5,20 @@
  */
 package vues;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modele.Chambre;
+import modele.ChambreDouble;
+import modele.ChambreSimple;
 import modele.ListeChambres;
+import modele.SuiteJunior;
+import modele.SuiteRoyale;
 import persistance.ManipulationFichiers;
+import utils.DejaPresentException;
+import utils.Utilitaires;
 
 /**
  *
@@ -48,7 +57,7 @@ public class PanelChambre extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         tNo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tPrix = new javax.swing.JTextField();
         rbSimple = new javax.swing.JRadioButton();
         rbDouble = new javax.swing.JRadioButton();
         rbSuite = new javax.swing.JRadioButton();
@@ -121,7 +130,7 @@ public class PanelChambre extends javax.swing.JPanel {
                                 .addGap(45, 45, 45)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(tNo)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)))
+                                    .addComponent(tPrix, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(rbJunior, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(rbSimple, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -150,7 +159,7 @@ public class PanelChambre extends javax.swing.JPanel {
                             .addComponent(tNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tPrix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addComponent(rbSimple)
@@ -201,12 +210,27 @@ public class PanelChambre extends javax.swing.JPanel {
     }//GEN-LAST:event_btAffichageActionPerformed
 
     private void btAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAjouterActionPerformed
-        // TODO add your handling code here:
-        //rbSimple.get
+        // TODO add your handling code here:     
         
-        if(rbDouble.isSelected()){
-            System.out.println("Chambre double");
+        if(rbDouble.isSelected()){           
+            
+            System.out.println(rbDouble.getActionCommand());
+           // listeChambre.ajouterChambre(new ChambreDouble(),tNo,tPrix);
+            
         }
+        if(rbJunior.isSelected()){
+             //listeChambre.ajouterChambre(new SuiteJunior(),tNo,tPrix);
+        }
+        if(rbSimple.isSelected()){
+            
+            //listeChambre.ajouterChambre(new ChambreSimple() ,tNo,tPrix);
+            
+        }
+        if(rbSuite.isSelected()){
+            //listeChambre.ajouterChambre(new SuiteRoyale() ,tNo,tPrix);
+            
+        }
+        
     }//GEN-LAST:event_btAjouterActionPerformed
 
 
@@ -217,12 +241,12 @@ public class PanelChambre extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JRadioButton rbDouble;
     private javax.swing.JRadioButton rbJunior;
     private javax.swing.JRadioButton rbSimple;
     private javax.swing.JRadioButton rbSuite;
     private javax.swing.JTextField tNo;
+    private javax.swing.JTextField tPrix;
     private javax.swing.JTable tabChambre;
     // End of variables declaration//GEN-END:variables
 }

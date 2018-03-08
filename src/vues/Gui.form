@@ -9,15 +9,21 @@
             <Property name="text" type="java.lang.String" value="Client"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="miAjouterClient">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ajouter un client"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miAjouterClientActionPerformed"/>
+              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="miAfficherClient">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Afficher liste Clients"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miAfficherClientActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -26,10 +32,13 @@
             <Property name="text" type="java.lang.String" value="Chambre"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+            <MenuItem class="javax.swing.JMenuItem" name="miAjouterChambre">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ajouter nouvelle chambre"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miAjouterChambreActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="miAffichageChambre">
               <Properties>
@@ -46,15 +55,21 @@
             <Property name="text" type="java.lang.String" value="Reservation"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+            <MenuItem class="javax.swing.JMenuItem" name="miAjouterReservation">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ajouter reservation"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miAjouterReservationActionPerformed"/>
+              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
+            <MenuItem class="javax.swing.JMenuItem" name="miAfficherReservation">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Afficher liste reservation"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miAfficherReservationActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

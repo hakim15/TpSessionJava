@@ -6,8 +6,10 @@
 package persistance;
 
 import java.io.*;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import modele.Chambre;
 import modele.ChambreDouble;
 import modele.ChambreSimple;
@@ -53,7 +55,7 @@ public class ManipulationFichiers {
                 try {
                     liste.ajouterChambre(chambre);
                 } catch (DejaPresentException ex) {
-                    Logger.getLogger(ManipulationFichiers.class.getName()).log(Level.SEVERE, null, ex);
+                    JOptionPane.showMessageDialog(null, ex.getMessage() +" est doublee", " Erreur", JOptionPane.ERROR_MESSAGE);
                 }
                 
             }
@@ -73,6 +75,35 @@ public class ManipulationFichiers {
             } catch (IOException ex) {
                 Logger.getLogger(ManipulationFichiers.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+
+    }
+    
+    public static void EcrireFichierChambre(ListeChambres liste ) {
+         FileOutputStream fos = null;
+         ObjectOutputStream oos = null;
+        try {
+            fos = new FileOutputStream("t");
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ManipulationFichiers.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        try {
+            oos = new ObjectOutputStream(fos);
+            
+            for(Chambre ch:liste){
+                oos.writeObject(ch);
+            }
+
+        } catch (IOException ex) {
+            Logger.getLogger(ManipulationFichiers.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        try {
+            oos.close();
+        } catch (IOException ex) {
+            Logger.getLogger(ManipulationFichiers.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

@@ -65,14 +65,14 @@ public class Gui extends javax.swing.JFrame {
         PanelPrincipale = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mCl = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        miAjouterClient = new javax.swing.JMenuItem();
+        miAfficherClient = new javax.swing.JMenuItem();
         mCh = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        miAjouterChambre = new javax.swing.JMenuItem();
         miAffichageChambre = new javax.swing.JMenuItem();
         mRes = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        miAjouterReservation = new javax.swing.JMenuItem();
+        miAfficherReservation = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,18 +91,33 @@ public class Gui extends javax.swing.JFrame {
 
         mCl.setText("Client");
 
-        jMenuItem1.setText("Ajouter un client");
-        mCl.add(jMenuItem1);
+        miAjouterClient.setText("Ajouter un client");
+        miAjouterClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAjouterClientActionPerformed(evt);
+            }
+        });
+        mCl.add(miAjouterClient);
 
-        jMenuItem2.setText("Afficher liste Clients");
-        mCl.add(jMenuItem2);
+        miAfficherClient.setText("Afficher liste Clients");
+        miAfficherClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAfficherClientActionPerformed(evt);
+            }
+        });
+        mCl.add(miAfficherClient);
 
         jMenuBar1.add(mCl);
 
         mCh.setText("Chambre");
 
-        jMenuItem3.setText("Ajouter nouvelle chambre");
-        mCh.add(jMenuItem3);
+        miAjouterChambre.setText("Ajouter nouvelle chambre");
+        miAjouterChambre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAjouterChambreActionPerformed(evt);
+            }
+        });
+        mCh.add(miAjouterChambre);
 
         miAffichageChambre.setText("Afficher liste de chambres");
         miAffichageChambre.addActionListener(new java.awt.event.ActionListener() {
@@ -116,11 +131,21 @@ public class Gui extends javax.swing.JFrame {
 
         mRes.setText("Reservation");
 
-        jMenuItem5.setText("Ajouter reservation");
-        mRes.add(jMenuItem5);
+        miAjouterReservation.setText("Ajouter reservation");
+        miAjouterReservation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAjouterReservationActionPerformed(evt);
+            }
+        });
+        mRes.add(miAjouterReservation);
 
-        jMenuItem6.setText("Afficher liste reservation");
-        mRes.add(jMenuItem6);
+        miAfficherReservation.setText("Afficher liste reservation");
+        miAfficherReservation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAfficherReservationActionPerformed(evt);
+            }
+        });
+        mRes.add(miAfficherReservation);
 
         jMenuBar1.add(mRes);
 
@@ -133,13 +158,45 @@ public class Gui extends javax.swing.JFrame {
         // TODO add your handling code here:
         pCh.setVisible(true);
         pCl.setVisible(false);
-        pRes.setVisible(false);        
-        
-        
-       
-       
+        pRes.setVisible(false);    
         
     }//GEN-LAST:event_miAffichageChambreActionPerformed
+
+    private void miAjouterClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAjouterClientActionPerformed
+        // TODO add your handling code here:
+        pCh.setVisible(false);
+        pCl.setVisible(true);
+        pRes.setVisible(false);
+    }//GEN-LAST:event_miAjouterClientActionPerformed
+
+    private void miAfficherClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAfficherClientActionPerformed
+        // TODO add your handling code here:
+        pCh.setVisible(false);
+        pCl.setVisible(true);
+        pRes.setVisible(false);
+        
+    }//GEN-LAST:event_miAfficherClientActionPerformed
+
+    private void miAjouterChambreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAjouterChambreActionPerformed
+        // TODO add your handling code here:
+        pCh.setVisible(true);
+        pCl.setVisible(false);
+        pRes.setVisible(false);
+    }//GEN-LAST:event_miAjouterChambreActionPerformed
+
+    private void miAjouterReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAjouterReservationActionPerformed
+        // TODO add your handling code here:
+        pCh.setVisible(false);
+        pCl.setVisible(false);
+        pRes.setVisible(true);
+    }//GEN-LAST:event_miAjouterReservationActionPerformed
+
+    private void miAfficherReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAfficherReservationActionPerformed
+        // TODO add your handling code here:
+        pCh.setVisible(false);
+        pCl.setVisible(false);
+        pRes.setVisible(true);
+    }//GEN-LAST:event_miAfficherReservationActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,14 +205,14 @@ public class Gui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelPrincipale;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenu mCh;
     private javax.swing.JMenu mCl;
     private javax.swing.JMenu mRes;
     private javax.swing.JMenuItem miAffichageChambre;
+    private javax.swing.JMenuItem miAfficherClient;
+    private javax.swing.JMenuItem miAfficherReservation;
+    private javax.swing.JMenuItem miAjouterChambre;
+    private javax.swing.JMenuItem miAjouterClient;
+    private javax.swing.JMenuItem miAjouterReservation;
     // End of variables declaration//GEN-END:variables
 }
