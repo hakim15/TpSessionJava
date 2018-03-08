@@ -20,6 +20,7 @@ public class Reservation {
     private Date dateFin;
     private int nbNuits;
     private int nbPersonnes;
+    private Chambre chambre;
 
     public Reservation(int reservation_id, int client_id, Date dateDebut, Date dateFin, int nbNuits, int nbPersonnes) {
         this.reservation_id = reservation_id;
@@ -29,6 +30,15 @@ public class Reservation {
         this.nbNuits = nbNuits;
         this.nbPersonnes = nbPersonnes;
     }
+
+    public Chambre getChambre() {
+        return chambre;
+    }
+
+    public void setChambre(Chambre chambre) {
+        this.chambre = chambre;
+    }
+    
 
     public int getReservation_id() {
         return reservation_id;

@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 import modele.Chambre;
 import modele.ChambreDouble;
 import modele.ChambreSimple;
-import modele.ListeChambres;
+import modele.ListeModele;
 import modele.SuiteJunior;
 import modele.SuiteRoyale;
 import persistance.ManipulationFichiers;
@@ -26,7 +26,7 @@ import utils.Utilitaires;
  */
 public class PanelChambre extends javax.swing.JPanel {
     
-    ListeChambres listeChambre;
+    ListeModele<Chambre> listeChambre;
 
     /**
      * Creates new form PanelChambre
@@ -34,7 +34,7 @@ public class PanelChambre extends javax.swing.JPanel {
     public PanelChambre() {
         initComponents();
         
-        listeChambre = new ListeChambres();
+        listeChambre = new ListeModele<Chambre>();
         ManipulationFichiers.lireFichierChambre(listeChambre);
        
     }

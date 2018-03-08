@@ -5,12 +5,20 @@
  */
 package modele;
 
+import java.util.Date;
+
 /**
  *
  * @author Zver
  */
 public class Facture {
     private Reservation reservation;
+    private String nomClient;
+    private String prenomClient;
+    private Date dateactuelle;
+    private double prixJour;
+    private double prixTotal;
+    
     
     public Facture(){}
 

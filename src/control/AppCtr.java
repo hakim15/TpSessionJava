@@ -6,7 +6,8 @@
 package control;
 
 import modele.Client;
-import modele.ListeClients;
+import modele.ListeModele;
+
 import utils.DejaPresentException;
 import utils.Utilitaires;
 
@@ -23,24 +24,24 @@ public class AppCtr {
         Client c1 = new Client(1, "Bill", "Brown", "3242514");
         Client c2 = new Client(1, "Bill", "Brown", "3242514");
         Client c3 = new Client(2, "Bill", "Brown", "3242514");
-        ListeClients lc = new ListeClients();
+        ListeModele<Client> lc = new ListeModele<>();
         try{
-            lc.ajouterClient(c1);
+            lc.ajouterElement(c1);
         }catch(DejaPresentException dpse){
             System.out.println("Non");
         }
         try{
-            lc.ajouterClient(c3);
+            lc.ajouterElement(c3);
         } catch(DejaPresentException dpse){
             System.out.println(dpse.getMessage());
         }
         try{
-            lc.ajouterClient(c2);
+            lc.ajouterElement(c2);
         } catch(DejaPresentException dpse){
             System.out.println(dpse.getMessage());
         }
         
-        Utilitaires.afficherListe(lc);
+        lc.afficherListe(lc);
     }
     
 }

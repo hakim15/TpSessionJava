@@ -13,17 +13,22 @@ import modele.Chambre;
  */
 public class DejaPresentException extends Exception{
     
-    //private E element;
+    private Object element;
+    
     
     public DejaPresentException(){}
     
     public <E>DejaPresentException(String message, E element){
         super(message);
-        //this.element = element;
+        this.element = element;
     }
 
-   /* public <E> E getElement() {
+    public Object getElement() {
         return element;
-    }*/
+    }
+
+    public void setElement(Object element) {
+        this.element = element;
+    } 
     
 }

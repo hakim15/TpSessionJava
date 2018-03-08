@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import modele.Chambre;
 import modele.ChambreDouble;
 import modele.ChambreSimple;
-import modele.ListeChambres;
+import modele.ListeModele;
 import modele.SuiteJunior;
 import modele.SuiteRoyale;
 import utils.DejaPresentException;
@@ -24,7 +24,7 @@ import utils.DejaPresentException;
  */
 public class ManipulationFichiers {
     
-    public static void lireFichierChambre(ListeChambres liste ) {
+    public static void lireFichierChambre(ListeModele<Chambre> liste ) {
 
         File file = new File("ListeDeChambre.txt");
         FileReader fr = null;
@@ -53,7 +53,7 @@ public class ManipulationFichiers {
                 }
                 
                 try {
-                    liste.ajouterChambre(chambre);
+                    liste.ajouterElement(chambre);
                 } catch (DejaPresentException ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage() +" est doublee", " Erreur", JOptionPane.ERROR_MESSAGE);
                 }
@@ -79,7 +79,7 @@ public class ManipulationFichiers {
 
     }
     
-    public static void EcrireFichierChambre(ListeChambres liste ) {
+    public static void EcrireFichierChambre(ListeModele<Chambre> liste ) {
          FileOutputStream fos = null;
          ObjectOutputStream oos = null;
         try {
